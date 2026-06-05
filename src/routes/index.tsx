@@ -77,15 +77,15 @@ function HomePage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-white border-b border-border/50">
         <div className="pointer-events-none absolute inset-0 bg-pattern-grid opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
-        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16 text-center">
-          <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-2 rounded border border-primary/10 bg-primary/5 px-3 py-1 text-xs font-medium text-primary uppercase tracking-widest">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28 text-center">
+          <div className="animate-fade-up max-w-4xl mx-auto flex flex-col items-center">
+            <span className="inline-flex items-center gap-2 rounded border border-primary/10 bg-primary/5 px-3 py-1 text-xs font-medium text-primary uppercase tracking-widest mb-6">
               <ShieldCheck className="h-3.5 w-3.5" /> Trusted by Government Organisations & Enterprises Since 1989
             </span>
-            <h1 className="mt-5 text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.1] text-primary max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.1] text-primary max-w-4xl mx-auto">
               Powering Organizations with Scalable Technology & Appliances
             </h1>
-            <div className="mt-6 flex flex-wrap justify-center gap-4">
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow hover:shadow-md px-8 font-medium">
                 <Link to="/contact">Request a Quote <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>

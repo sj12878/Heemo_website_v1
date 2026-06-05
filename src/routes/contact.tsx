@@ -58,14 +58,16 @@ function ContactPage() {
       <section className="relative overflow-hidden bg-white border-b border-border/50">
         <div className="pointer-events-none absolute inset-0 bg-pattern-grid opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
-          <p className="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-primary/60 mb-6">Contact Us</p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-primary max-w-4xl leading-[1.1] animate-fade-up">
-            Let's Build a Reliable<br />Supply Partnership
-          </h1>
-          <p className="mt-8 text-lg sm:text-xl max-w-3xl leading-relaxed text-muted-foreground animate-fade-up animate-delay-100">
-            Share your requirement and our team will respond with a
-            tailored proposal focused on your institutional needs.
-          </p>
+          <div className="animate-fade-up">
+            <p className="text-xs font-medium uppercase tracking-widest text-primary/60 mb-6">Contact Us</p>
+            <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-primary max-w-4xl leading-[1.1]">
+              Let's Build a Reliable<br />Supply Partnership
+            </h1>
+            <p className="mt-6 text-base sm:text-lg max-w-3xl leading-relaxed text-muted-foreground">
+              Share your requirement and our team will respond with a
+              tailored proposal focused on your institutional needs.
+            </p>
+          </div>
         </div>
       </section>
 
