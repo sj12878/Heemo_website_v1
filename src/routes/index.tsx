@@ -76,20 +76,22 @@ function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-white border-b border-border/50">
-        <div className="pointer-events-none absolute inset-0 bg-pattern-grid opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 to-white" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-[100px] opacity-50 pointer-events-none" />
+        <div className="pointer-events-none absolute inset-0 bg-pattern-grid opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28 text-center">
           <div className="animate-fade-up max-w-4xl mx-auto flex flex-col items-center">
-            <span className="inline-flex items-center gap-2 rounded border border-primary/10 bg-primary/5 px-3 py-1 text-xs font-medium text-primary uppercase tracking-widest mb-6">
-              <ShieldCheck className="h-3.5 w-3.5" /> Trusted by Government Organisations & Enterprises Since 1989
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white px-3.5 py-1.5 text-xs font-medium text-primary uppercase tracking-widest mb-8 shadow-sm">
+              <ShieldCheck className="h-4 w-4 text-primary/80" /> Trusted by Government Organisations & Enterprises Since 1989
             </span>
-            <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.1] text-primary max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.15] text-primary max-w-4xl mx-auto">
               Powering Organizations with Scalable Technology & Appliances
             </h1>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow hover:shadow-md px-8 font-medium">
-                <Link to="/contact">Request a Quote <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg px-8 font-medium h-12 rounded-md transition-all">
+                <Link to="/contact" hash="contact-form">Request a Quote <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-white text-primary border-primary/20 hover:bg-primary/5 hover:border-primary/30 px-8 font-medium">
+              <Button asChild size="lg" variant="outline" className="bg-white text-primary border-primary/20 hover:bg-slate-50 hover:border-primary/30 shadow-sm px-8 font-medium h-12 rounded-md transition-all">
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
@@ -98,9 +100,14 @@ function HomePage() {
       </section>
 
       {/* Trusted by */}
-      <section className="border-y border-border/40 bg-slate-50/50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10">
+      <section className="border-y border-border/40 bg-slate-50/50 py-10 sm:py-12 lg:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto mb-12 animate-fade-up">
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
+              Trusted by Government Organisations, Enterprises & Institutions
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10">
             {trustOrgs.map((org) => (
               <div
                 key={org}
@@ -117,40 +124,34 @@ function HomePage() {
       </section>
 
       {/* Brand Partners */}
-      <section className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-
-
-
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-primary leading-[1.1]">
-              Authorized Partnership with Global Brands
-            </h2>
-          </div>
-          <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-6">
-            {brandPartners.map((b) => (
-              <div
-                key={b.name}
-                className="group flex h-24 items-center justify-center rounded-xl bg-white p-6 shadow-card border border-border/40 transition-premium hover:-translate-y-0.5 hover:shadow-md hover:border-primary/10"
-              >
-                <img
-                  src={b.src}
-                  alt={`${b.name} logo`}
-                  className="max-h-10 max-w-full w-auto object-contain transition-premium"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
+      <Section>
+        <SectionHeader
+          title="Authorized Partnership with Global Brands"
+          className="mb-10"
+        />
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-6">
+          {brandPartners.map((b) => (
+            <div
+              key={b.name}
+              className="group flex h-24 items-center justify-center rounded-2xl bg-white p-6 shadow-card border border-border/40 transition-premium hover:-translate-y-0.5 hover:shadow-md hover:border-primary/10"
+            >
+              <img
+                src={b.src}
+                alt={`${b.name} logo`}
+                className="max-h-10 max-w-full w-auto object-contain transition-premium"
+                loading="lazy"
+              />
+            </div>
+          ))}
         </div>
-      </section>
+      </Section>
 
       {/* Product categories */}
       <Section muted>
         <SectionHeader
           eyebrow="Solutions"
           title="Product Range"
-          className="mb-16"
+          className="mb-10"
         />
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 px-2 sm:px-4">
           {categories.map((c) => {
@@ -233,7 +234,7 @@ function HomePage() {
               };
 
               return (
-                <div key={w.title} className="group relative flex flex-col items-start gap-4 rounded-xl p-5 sm:p-6 bg-white border border-border/50 shadow-card transition-premium hover:shadow-md hover:border-primary/5 overflow-hidden">
+                <div key={w.title} className="group relative flex flex-col items-start gap-4 rounded-2xl p-6 sm:p-8 bg-white border border-border/50 shadow-card transition-premium hover:-translate-y-1 hover:shadow-elegant hover:border-primary/5 overflow-hidden">
                   <div className="absolute top-0 left-0 w-full h-[2px] bg-primary/0 group-hover:bg-primary transition-premium" />
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 text-primary transition-premium group-hover:bg-primary/5 group-hover:scale-[1.03]">
                     {IconMap[w.title]}

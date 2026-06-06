@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { z } from "zod";
 import { Section } from "@/components/Section";
 import { Button } from "@/components/ui/button";
@@ -26,6 +26,24 @@ const schema = z.object({
 function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const handleHashScroll = () => {
+      if (window.location.hash === "#contact-form") {
+        // Use a tiny timeout to ensure rendering/layout is complete
+        setTimeout(() => {
+          const element = document.getElementById("contact-form");
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 100);
+      }
+    };
+
+    handleHashScroll();
+    window.addEventListener("hashchange", handleHashScroll);
+    return () => window.removeEventListener("hashchange", handleHashScroll);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -57,24 +75,24 @@ function ContactPage() {
       <Toaster />
       <section className="relative overflow-hidden bg-white border-b border-border/50">
         <div className="pointer-events-none absolute inset-0 bg-pattern-grid opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20">
           <div className="animate-fade-up">
             <p className="text-xs font-medium uppercase tracking-widest text-primary/60 mb-6">Contact Us</p>
             <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-primary max-w-4xl leading-[1.1]">
               Let's Build a Reliable<br />Supply Partnership
             </h1>
             <p className="mt-6 text-base sm:text-lg max-w-3xl leading-relaxed text-muted-foreground">
-              Share your requirement and our team will respond with a
-              tailored proposal focused on your institutional needs.
+               Share your requirement and our team will respond with a
+               tailored proposal focused on your institutional needs.
             </p>
           </div>
         </div>
       </section>
 
-      <Section muted>
+      <Section id="contact-form" muted>
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2 space-y-8 animate-fade-up">
-            <div className="rounded-2xl border border-border/50 bg-white p-8 sm:p-10 shadow-card">
+            <div className="rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-card">
               <h3 className="text-2xl font-bold text-foreground">Get in Touch</h3>
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
                 Reach us through any of the following channels for inquiries, quotes, or procurement coordination.
@@ -124,7 +142,7 @@ function ContactPage() {
           </div>
 
           <div className="lg:col-span-3 animate-fade-up animate-delay-100">
-            <form onSubmit={handleSubmit} className="rounded-2xl border border-border/50 bg-white p-8 sm:p-12 shadow-card space-y-6">
+            <form onSubmit={handleSubmit} className="rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-card space-y-6">
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-xs font-bold uppercase tracking-wider">Full Name *</Label>

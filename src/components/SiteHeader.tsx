@@ -66,7 +66,7 @@ export function SiteHeader() {
 
         <div className="hidden md:block ml-8">
           <Button asChild size="sm" className="px-6 shadow-sm hover:shadow-md transition-premium font-medium">
-            <Link to="/contact" className="whitespace-nowrap">Request a Quote</Link>
+            <Link to="/contact" hash="contact-form" className="whitespace-nowrap">Request a Quote</Link>
           </Button>
         </div>
 
@@ -93,7 +93,7 @@ export function SiteHeader() {
               </Link>
             ))}
             <Button asChild className="mt-4 rounded-full">
-              <Link to="/contact" onClick={() => setOpen(false)}>Request a Quote</Link>
+              <Link to="/contact" hash="contact-form" onClick={() => setOpen(false)}>Request a Quote</Link>
             </Button>
           </nav>
         </div>

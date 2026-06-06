@@ -10,7 +10,7 @@ function TermsPage() {
     <>
       <section className="relative overflow-hidden bg-white border-b border-border/50">
         <div className="pointer-events-none absolute inset-0 bg-pattern-grid opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20">
           <div className="animate-fade-up">
             <p className="text-xs font-medium uppercase tracking-widest text-primary/60 mb-6">Legal Information</p>
             <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-primary max-w-4xl leading-[1.1]">

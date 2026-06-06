@@ -16,7 +16,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "py-20 sm:py-24 lg:py-32",
+        "py-12 sm:py-16 lg:py-20",
         muted ? "bg-slate-50/80" : "bg-white",
         className,
       )}
@@ -46,7 +46,7 @@ export function SectionHeader({
       className
     )}>
       {eyebrow && (
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary/60 mb-4">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary/60 mb-3">
           {eyebrow}
         </p>
       )}

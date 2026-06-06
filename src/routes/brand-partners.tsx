@@ -31,7 +31,7 @@ function BrandPartnersPage() {
     <>
       <section className="relative overflow-hidden bg-white border-b border-border/50">
         <div className="pointer-events-none absolute inset-0 bg-pattern-grid opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20">
           <div className="animate-fade-up">
             <p className="text-xs font-medium uppercase tracking-widest text-primary/60 mb-6">Our Ecosystem</p>
             <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-primary max-w-4xl leading-[1.1]">
@@ -45,25 +45,25 @@ function BrandPartnersPage() {
         <SectionHeader
           eyebrow="Authorized Partnerships"
           title="Global Brand Portfolio"
-          className="mb-16"
+          className="mb-10"
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {partners.map((p) => (
             <div
               key={p.name}
-              className="group relative flex flex-col items-center rounded-2xl border border-border/50 bg-white p-8 text-center shadow-card transition-premium hover:-translate-y-1.5 hover:shadow-elegant hover:border-primary/20"
+              className="group relative flex flex-col items-center justify-center rounded-2xl border border-border/50 bg-white p-6 text-center shadow-card transition-premium hover:-translate-y-1 hover:shadow-elegant hover:border-primary/20 min-h-[260px]"
             >
-              <div className="flex h-20 w-32 items-center justify-center transition-premium group-hover:scale-110">
+              <div className="flex h-18 w-36 items-center justify-center transition-premium group-hover:scale-110">
                 <img
                   src={p.logo}
                   alt={`${p.name} logo`}
-                  className="max-h-12 max-w-full w-auto object-contain transition-premium"
+                  className="max-h-14 max-w-full w-auto object-contain transition-premium"
                   loading="lazy"
                 />
               </div>
-              <h3 className="mt-6 text-lg font-bold text-foreground group-hover:text-primary transition-premium">{p.name}</h3>
-              <p className="mt-2 text-xs font-medium text-muted-foreground leading-relaxed px-4">{p.desc}</p>
-              <div className="h-0.5 w-0 bg-primary mt-4 transition-premium group-hover:w-8" />
+              <h3 className="mt-4 text-lg font-bold text-foreground group-hover:text-primary transition-premium">{p.name}</h3>
+              <p className="mt-1.5 text-xs font-medium text-muted-foreground leading-relaxed px-4">{p.desc}</p>
+              <div className="h-0.5 w-0 bg-primary mt-3 transition-premium group-hover:w-8" />
             </div>
           ))}
         </div>
