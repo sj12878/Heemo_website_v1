@@ -2,9 +2,21 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/Section";
 import {
-  ArrowRight, Building2,
-  Laptop, Printer, Server, HardDrive, Network, Tv, Projector, Monitor,
-  Award, ShieldCheck, Truck, Handshake, BarChart3,
+  ArrowRight,
+  Building2,
+  Laptop,
+  Printer,
+  Server,
+  HardDrive,
+  Network,
+  Tv,
+  Projector,
+  Monitor,
+  Award,
+  ShieldCheck,
+  Truck,
+  Handshake,
+  BarChart3,
 } from "lucide-react";
 import hpLogo from "@/assets/brands/hp.png";
 import hpeLogo from "@/assets/brands/hpe.png";
@@ -22,9 +34,6 @@ import appliancesImg from "@/assets/products/appliances.jpg";
 import projectorsImg from "@/assets/products/projectors.jpg";
 import workstationsImg from "@/assets/products/workstations.jpg";
 import networkingImg from "@/assets/products/networking.jpg";
-
-
-
 
 const brandPartners = [
   { name: "HP", src: hpLogo },
@@ -51,7 +60,6 @@ const trustOrgs = [
 ];
 
 const CARD_BG = "#FFFFFF";
-
 
 const categories = [
   { icon: Laptop, title: "Laptops & Desktops" },
@@ -82,16 +90,28 @@ function HomePage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28 text-center">
           <div className="animate-fade-up max-w-4xl mx-auto flex flex-col items-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white px-3.5 py-1.5 text-xs font-medium text-primary uppercase tracking-widest mb-8 shadow-sm">
-              <ShieldCheck className="h-4 w-4 text-primary/80" /> Trusted by Government Organisations & Enterprises Since 1989
+              <ShieldCheck className="h-4 w-4 text-primary/80" /> Trusted by Government
+              Organisations & Enterprises Since 1989
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.15] text-primary max-w-4xl mx-auto">
               Powering Organizations with Scalable Technology & Appliances
             </h1>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg px-8 font-medium h-12 rounded-md transition-all">
-                <Link to="/contact" hash="contact-form">Request a Quote <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              <Button
+                asChild
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg px-8 font-medium h-12 rounded-md transition-all"
+              >
+                <Link to="/contact" hash="contact-form">
+                  Request a Quote <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-white text-primary border-primary/20 hover:bg-slate-50 hover:border-primary/30 shadow-sm px-8 font-medium h-12 rounded-md transition-all">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="bg-white text-primary border-primary/20 hover:bg-slate-50 hover:border-primary/30 shadow-sm px-8 font-medium h-12 rounded-md transition-all"
+              >
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
@@ -116,7 +136,9 @@ function HomePage() {
                 <div className="h-8 w-8 rounded-full bg-white shadow-sm flex items-center justify-center border border-border/50 group-hover:border-primary/20 transition-premium">
                   <Building2 className="h-3.5 w-3.5 text-primary/60 group-hover:text-primary transition-premium" />
                 </div>
-                <span className="text-[0.7rem] font-bold text-foreground/80 leading-tight tracking-wide">{org}</span>
+                <span className="text-[0.7rem] font-bold text-foreground/80 leading-tight tracking-wide">
+                  {org}
+                </span>
               </div>
             ))}
           </div>
@@ -125,10 +147,7 @@ function HomePage() {
 
       {/* Brand Partners */}
       <Section>
-        <SectionHeader
-          title="Authorized Partnership with Global Brands"
-          className="mb-10"
-        />
+        <SectionHeader title="Authorized Partnership with Global Brands" className="mb-10" />
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-6">
           {brandPartners.map((b) => (
             <div
@@ -148,11 +167,7 @@ function HomePage() {
 
       {/* Product categories */}
       <Section muted>
-        <SectionHeader
-          eyebrow="Solutions"
-          title="Product Range"
-          className="mb-10"
-        />
+        <SectionHeader eyebrow="Solutions" title="Product Range" className="mb-10" />
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 px-2 sm:px-4">
           {categories.map((c) => {
             const cardImages: Record<string, string> = {
@@ -160,9 +175,9 @@ function HomePage() {
               "Printers & Imaging Solutions": printerImg,
               "Servers & Enterprise Hardware": serverImg,
               "Storage Devices": storageImg,
-              "Appliances": appliancesImg,
+              Appliances: appliancesImg,
               "Projectors & Peripherals": projectorsImg,
-              "Workstations": workstationsImg,
+              Workstations: workstationsImg,
               "Networking Equipment": networkingImg,
             };
 
@@ -200,7 +215,13 @@ function HomePage() {
           <div className="lg:col-span-2">
             <SectionHeader
               eyebrow="Why Heemo India"
-              title={<>A Trusted Partner,<br />Since 1989</>}
+              title={
+                <>
+                  A Trusted Partner,
+                  <br />
+                  Since 1989
+                </>
+              }
               align="left"
             />
           </div>
@@ -234,19 +255,23 @@ function HomePage() {
               };
 
               return (
-                <div key={w.title} className="group relative flex flex-col items-start gap-4 rounded-2xl p-6 sm:p-8 bg-white border border-border/50 shadow-card transition-premium hover:-translate-y-1 hover:shadow-elegant hover:border-primary/5 overflow-hidden">
+                <div
+                  key={w.title}
+                  className="group relative flex flex-col items-start gap-4 rounded-2xl p-6 sm:p-8 bg-white border border-border/50 shadow-card transition-premium hover:-translate-y-1 hover:shadow-elegant hover:border-primary/5 overflow-hidden"
+                >
                   <div className="absolute top-0 left-0 w-full h-[2px] bg-primary/0 group-hover:bg-primary transition-premium" />
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 text-primary transition-premium group-hover:bg-primary/5 group-hover:scale-[1.03]">
                     {IconMap[w.title]}
                   </div>
-                  <h3 className="font-medium text-base text-foreground group-hover:text-primary transition-premium leading-snug">{w.title}</h3>
+                  <h3 className="font-medium text-base text-foreground group-hover:text-primary transition-premium leading-snug">
+                    {w.title}
+                  </h3>
                 </div>
               );
             })}
           </div>
         </div>
       </Section>
-
     </>
   );
 }

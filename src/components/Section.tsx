@@ -15,11 +15,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn(
-        "py-12 sm:py-16 lg:py-20",
-        muted ? "bg-slate-50/80" : "bg-white",
-        className,
-      )}
+      className={cn("py-12 sm:py-16 lg:py-20", muted ? "bg-slate-50/80" : "bg-white", className)}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
     </section>
@@ -40,11 +36,7 @@ export function SectionHeader({
   className?: string;
 }) {
   return (
-    <div className={cn(
-      "max-w-3xl",
-      align === "center" ? "mx-auto text-center" : "",
-      className
-    )}>
+    <div className={cn("max-w-3xl", align === "center" ? "mx-auto text-center" : "", className)}>
       {eyebrow && (
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary/60 mb-3">
           {eyebrow}

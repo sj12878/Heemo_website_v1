@@ -11,10 +11,26 @@ export const Route = createFileRoute("/about")({
 });
 
 const pillars = [
-  { iconSrc: handshakeIcon, title: "Long-Term Partnerships", desc: "We invest in dependable client and OEM relationships built on consistency and accountability." },
-  { iconSrc: institutionalIcon, title: "Institutional Supply Expertise", desc: "Trusted experience in supporting government and enterprise procurement requirements." },
-  { iconSrc: logisticsIcon, title: "Logistics Strength", desc: "A pan-India delivery network with SLA-driven dispatch, tracking and last-mile coordination." },
-  { iconSrc: seamlessIcon, title: "Seamless Execution", desc: "Handled with clear coordination and reliable execution — without constant follow-ups." },
+  {
+    iconSrc: handshakeIcon,
+    title: "Long-Term Partnerships",
+    desc: "We invest in dependable client and OEM relationships built on consistency and accountability.",
+  },
+  {
+    iconSrc: institutionalIcon,
+    title: "Institutional Supply Expertise",
+    desc: "Trusted experience in supporting government and enterprise procurement requirements.",
+  },
+  {
+    iconSrc: logisticsIcon,
+    title: "Logistics Strength",
+    desc: "A pan-India delivery network with SLA-driven dispatch, tracking and last-mile coordination.",
+  },
+  {
+    iconSrc: seamlessIcon,
+    title: "Seamless Execution",
+    desc: "Handled with clear coordination and reliable execution — without constant follow-ups.",
+  },
 ];
 
 function AboutPage() {
@@ -24,28 +40,33 @@ function AboutPage() {
         <div className="pointer-events-none absolute inset-0 bg-pattern-grid opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20">
           <div className="animate-fade-up">
-            <p className="text-xs font-medium uppercase tracking-widest text-primary/60 mb-6">About Heemo India</p>
+            <p className="text-xs font-medium uppercase tracking-widest text-primary/60 mb-6">
+              About Heemo India
+            </p>
             <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-primary max-w-4xl leading-[1.1]">
-              A Trusted Supply Partner,<br />Since 1989
+              A Trusted Supply Partner,
+              <br />
+              Since 1989
             </h1>
           </div>
         </div>
       </section>
 
       <Section muted>
-        <SectionHeader
-          eyebrow="What Defines Us"
-          title="Our Core Pillars"
-          className="mb-10"
-        />
+        <SectionHeader eyebrow="What Defines Us" title="Our Core Pillars" className="mb-10" />
         <div className="grid gap-8 sm:grid-cols-2">
           {pillars.map((p, i) => (
-            <div key={p.title} className="group relative rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-card transition-premium hover:-translate-y-1 hover:shadow-elegant hover:border-primary/20 overflow-hidden">
+            <div
+              key={p.title}
+              className="group relative rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-card transition-premium hover:-translate-y-1 hover:shadow-elegant hover:border-primary/20 overflow-hidden"
+            >
               <div className="absolute top-0 left-0 w-full h-[3px] bg-primary/10 group-hover:bg-primary transition-premium" />
               <div className="flex h-20 w-20 items-center justify-center rounded-xl bg-slate-50 p-4 transition-premium group-hover:bg-primary/5 group-hover:scale-[1.03]">
                 <img src={p.iconSrc} alt={p.title} className="h-full w-full object-contain" />
               </div>
-              <h3 className="mt-6 text-xl font-semibold text-foreground group-hover:text-primary transition-premium">{p.title}</h3>
+              <h3 className="mt-6 text-xl font-semibold text-foreground group-hover:text-primary transition-premium">
+                {p.title}
+              </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
             </div>
           ))}
@@ -54,20 +75,19 @@ function AboutPage() {
 
       {/* Mission & Vision */}
       <Section>
-        <SectionHeader
-          eyebrow="Our Purpose"
-          title="Mission & Vision"
-          className="mb-10"
-        />
+        <SectionHeader eyebrow="Our Purpose" title="Mission & Vision" className="mb-10" />
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="group relative rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-card transition-premium hover:-translate-y-1 hover:shadow-elegant hover:border-primary/20 overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[3px] bg-primary/10 group-hover:bg-primary transition-premium" />
             <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-slate-50 text-primary transition-premium group-hover:bg-primary group-hover:text-white shadow-sm border border-border/40">
               <Target className="h-6 w-6" />
             </div>
-            <h3 className="mt-6 text-xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-premium">Mission</h3>
+            <h3 className="mt-6 text-xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-premium">
+              Mission
+            </h3>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
-              To provide dependable supply of IT Products and Appliances with consistent execution and clear processes.
+              To provide dependable supply of IT Products and Appliances with consistent execution
+              and clear processes.
             </p>
           </div>
           <div className="group relative rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-card transition-premium hover:-translate-y-1 hover:shadow-elegant hover:border-primary/20 overflow-hidden">
@@ -75,14 +95,16 @@ function AboutPage() {
             <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-slate-50 text-primary transition-premium group-hover:bg-primary group-hover:text-white shadow-sm border border-border/40">
               <Eye className="h-6 w-6" />
             </div>
-            <h3 className="mt-6 text-xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-premium">Vision</h3>
+            <h3 className="mt-6 text-xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-premium">
+              Vision
+            </h3>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
-              To build long-term partnerships as a trusted supply partner for government organisations and enterprises.
+              To build long-term partnerships as a trusted supply partner for government
+              organisations and enterprises.
             </p>
           </div>
         </div>
       </Section>
-
     </>
   );
 }

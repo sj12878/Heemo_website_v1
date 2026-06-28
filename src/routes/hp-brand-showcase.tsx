@@ -15,7 +15,8 @@ function HPBrandShowcasePage() {
     // Create the script element
     const script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "https://syndication.inc.hp.com/inpage/contentid.min.js#Yz1zaG93Y2FzZS9pbi9lbiZtPUlCU0wmY2M9aW4mcD0yLVNJVUQtMTM1MQ";
+    script.src =
+      "https://syndication.inc.hp.com/inpage/contentid.min.js#Yz1zaG93Y2FzZS9pbi9lbiZtPUlCU0wmY2M9aW4mcD0yLVNJVUQtMTM1MQ";
     script.async = true;
 
     // Append script to our container
@@ -31,10 +32,7 @@ function HPBrandShowcasePage() {
 
   return (
     <Section>
-      <div 
-        ref={containerRef} 
-        className="w-full min-h-[500px]" 
-      />
+      <div ref={containerRef} className="w-full min-h-[500px]" />
     </Section>
   );
 }

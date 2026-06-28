@@ -77,13 +77,17 @@ function ContactPage() {
         <div className="pointer-events-none absolute inset-0 bg-pattern-grid opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20">
           <div className="animate-fade-up">
-            <p className="text-xs font-medium uppercase tracking-widest text-primary/60 mb-6">Contact Us</p>
+            <p className="text-xs font-medium uppercase tracking-widest text-primary/60 mb-6">
+              Contact Us
+            </p>
             <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-primary max-w-4xl leading-[1.1]">
-              Let's Build a Reliable<br />Supply Partnership
+              Let's Build a Reliable
+              <br />
+              Supply Partnership
             </h1>
             <p className="mt-6 text-base sm:text-lg max-w-3xl leading-relaxed text-muted-foreground">
-               Share your requirement and our team will respond with a
-               tailored proposal focused on your institutional needs.
+              Share your requirement and our team will respond with a tailored proposal focused on
+              your institutional needs.
             </p>
           </div>
         </div>
@@ -95,7 +99,8 @@ function ContactPage() {
             <div className="rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-card">
               <h3 className="text-2xl font-bold text-foreground">Get in Touch</h3>
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                Reach us through any of the following channels for inquiries, quotes, or procurement coordination.
+                Reach us through any of the following channels for inquiries, quotes, or procurement
+                coordination.
               </p>
               <ul className="mt-10 space-y-8">
                 <li className="group flex items-start gap-4 transition-premium">
@@ -103,7 +108,9 @@ function ContactPage() {
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">Phone</div>
+                    <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">
+                      Phone
+                    </div>
                     <div className="text-base font-semibold text-foreground">+91 9719107400</div>
                   </div>
                 </li>
@@ -112,8 +119,12 @@ function ContactPage() {
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">Email</div>
-                    <div className="text-base font-semibold text-foreground">info@heemoindia.in</div>
+                    <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">
+                      Email
+                    </div>
+                    <div className="text-base font-semibold text-foreground">
+                      info@heemoindia.in
+                    </div>
                   </div>
                 </li>
                 <li className="group flex items-start gap-4 transition-premium">
@@ -121,8 +132,12 @@ function ContactPage() {
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">Location</div>
-                    <div className="text-base font-semibold text-foreground">Meerut, Uttar Pradesh, India</div>
+                    <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">
+                      Location
+                    </div>
+                    <div className="text-base font-semibold text-foreground">
+                      Meerut, Uttar Pradesh, India
+                    </div>
                   </div>
                 </li>
               </ul>
@@ -142,41 +157,101 @@ function ContactPage() {
           </div>
 
           <div className="lg:col-span-3 animate-fade-up animate-delay-100">
-            <form onSubmit={handleSubmit} className="rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-card space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-card space-y-6"
+            >
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
-                  <Label htmlFor="name" className="text-xs font-bold uppercase tracking-wider">Full Name *</Label>
-                  <Input id="name" name="name" placeholder="Enter your full name" required className="h-12 rounded-xl border-border/60 focus:ring-primary/20" />
+                  <Label htmlFor="name" className="text-xs font-bold uppercase tracking-wider">
+                    Full Name *
+                  </Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                    className="h-12 rounded-xl border-border/60 focus:ring-primary/20"
+                  />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="organization" className="text-xs font-bold uppercase tracking-wider">Organization</Label>
-                  <Input id="organization" name="organization" placeholder="Organisation / Dept Name" className="h-12 rounded-xl border-border/60 focus:ring-primary/20" />
+                  <Label
+                    htmlFor="organization"
+                    className="text-xs font-bold uppercase tracking-wider"
+                  >
+                    Organization
+                  </Label>
+                  <Input
+                    id="organization"
+                    name="organization"
+                    placeholder="Organisation / Dept Name"
+                    className="h-12 rounded-xl border-border/60 focus:ring-primary/20"
+                  />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-xs font-bold uppercase tracking-wider">Email *</Label>
-                  <Input id="email" name="email" type="email" placeholder="Official email address" required className="h-12 rounded-xl border-border/60 focus:ring-primary/20" />
+                  <Label htmlFor="email" className="text-xs font-bold uppercase tracking-wider">
+                    Email *
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Official email address"
+                    required
+                    className="h-12 rounded-xl border-border/60 focus:ring-primary/20"
+                  />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-xs font-bold uppercase tracking-wider">Phone</Label>
-                  <Input id="phone" name="phone" placeholder="+91" className="h-12 rounded-xl border-border/60 focus:ring-primary/20" />
+                  <Label htmlFor="phone" className="text-xs font-bold uppercase tracking-wider">
+                    Phone
+                  </Label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    placeholder="+91"
+                    className="h-12 rounded-xl border-border/60 focus:ring-primary/20"
+                  />
                 </div>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="requirement" className="text-xs font-bold uppercase tracking-wider">Requirement</Label>
-                <Input id="requirement" name="requirement" placeholder="Mention your requirement (Products, Quantity, Tender, etc.)" className="h-12 rounded-xl border-border/60 focus:ring-primary/20" />
+                <Label htmlFor="requirement" className="text-xs font-bold uppercase tracking-wider">
+                  Requirement
+                </Label>
+                <Input
+                  id="requirement"
+                  name="requirement"
+                  placeholder="Mention your requirement (Products, Quantity, Tender, etc.)"
+                  className="h-12 rounded-xl border-border/60 focus:ring-primary/20"
+                />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="message" className="text-xs font-bold uppercase tracking-wider">Message *</Label>
-                <Textarea id="message" name="message" placeholder="Share your specifications, timelines, or procurement details" rows={6} required className="rounded-xl border-border/60 focus:ring-primary/20 resize-none" />
+                <Label htmlFor="message" className="text-xs font-bold uppercase tracking-wider">
+                  Message *
+                </Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="Share your specifications, timelines, or procurement details"
+                  rows={6}
+                  required
+                  className="rounded-xl border-border/60 focus:ring-primary/20 resize-none"
+                />
               </div>
-              <Button type="submit" size="lg" disabled={submitting} className="w-full sm:w-auto h-12 px-10 rounded-full font-bold shadow-lg shadow-primary/10 transition-premium">
+              <Button
+                type="submit"
+                size="lg"
+                disabled={submitting}
+                className="w-full sm:w-auto h-12 px-10 rounded-full font-bold shadow-lg shadow-primary/10 transition-premium"
+              >
                 {submitting ? "Sending..." : "Send Enquiry"}
               </Button>
 
               {submitted && (
                 <div className="flex items-start gap-3 rounded-xl bg-slate-50 p-5 text-sm text-foreground border border-primary/10 animate-fade-in">
                   <CheckCircle2 className="h-5 w-5 text-primary mt-0.5" />
-                  <p className="font-medium">Thank you for reaching out. Our team will respond shortly.</p>
+                  <p className="font-medium">
+                    Thank you for reaching out. Our team will respond shortly.
+                  </p>
                 </div>
               )}
             </form>

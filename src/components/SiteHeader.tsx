@@ -29,7 +29,7 @@ export function SiteHeader() {
         "sticky top-0 z-40 w-full transition-premium",
         scrolled
           ? "bg-background/90 backdrop-blur-lg shadow-sm py-2 border-b border-border/40"
-          : "bg-background/70 backdrop-blur-md py-3"
+          : "bg-background/70 backdrop-blur-md py-3",
       )}
     >
       <div className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between pl-2 pr-4 sm:pl-3 sm:pr-6 lg:pl-4 lg:pr-8">
@@ -41,7 +41,7 @@ export function SiteHeader() {
             height={60}
             className={cn(
               "h-12 sm:h-14 w-auto transition-premium",
-              scrolled ? "scale-95" : "scale-100"
+              scrolled ? "scale-95" : "scale-100",
             )}
           />
           <span className="sr-only">Heemo India</span>
@@ -66,8 +66,14 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden md:block ml-8">
-          <Button asChild size="sm" className="px-6 shadow-sm hover:shadow-md transition-premium font-medium">
-            <Link to="/contact" hash="contact-form" className="whitespace-nowrap">Request a Quote</Link>
+          <Button
+            asChild
+            size="sm"
+            className="px-6 shadow-sm hover:shadow-md transition-premium font-medium"
+          >
+            <Link to="/contact" hash="contact-form" className="whitespace-nowrap">
+              Request a Quote
+            </Link>
           </Button>
         </div>
 
@@ -94,7 +100,9 @@ export function SiteHeader() {
               </Link>
             ))}
             <Button asChild className="mt-4 rounded-full">
-              <Link to="/contact" hash="contact-form" onClick={() => setOpen(false)}>Request a Quote</Link>
+              <Link to="/contact" hash="contact-form" onClick={() => setOpen(false)}>
+                Request a Quote
+              </Link>
             </Button>
           </nav>
         </div>
