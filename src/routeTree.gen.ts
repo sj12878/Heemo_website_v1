@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as HpBrandShowcaseRouteImport } from './routes/hp-brand-showcase'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BrandPartnersRouteImport } from './routes/brand-partners'
 import { Route as AboutRouteImport } from './routes/about'
@@ -24,6 +25,11 @@ const TermsRoute = TermsRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HpBrandShowcaseRoute = HpBrandShowcaseRouteImport.update({
+  id: '/hp-brand-showcase',
+  path: '/hp-brand-showcase',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/brand-partners': typeof BrandPartnersRoute
   '/contact': typeof ContactRoute
+  '/hp-brand-showcase': typeof HpBrandShowcaseRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/brand-partners': typeof BrandPartnersRoute
   '/contact': typeof ContactRoute
+  '/hp-brand-showcase': typeof HpBrandShowcaseRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/brand-partners': typeof BrandPartnersRoute
   '/contact': typeof ContactRoute
+  '/hp-brand-showcase': typeof HpBrandShowcaseRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
 }
@@ -79,16 +88,25 @@ export interface FileRouteTypes {
     | '/about'
     | '/brand-partners'
     | '/contact'
+    | '/hp-brand-showcase'
     | '/privacy'
     | '/terms'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/brand-partners' | '/contact' | '/privacy' | '/terms'
+  to:
+    | '/'
+    | '/about'
+    | '/brand-partners'
+    | '/contact'
+    | '/hp-brand-showcase'
+    | '/privacy'
+    | '/terms'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/brand-partners'
     | '/contact'
+    | '/hp-brand-showcase'
     | '/privacy'
     | '/terms'
   fileRoutesById: FileRoutesById
@@ -98,6 +116,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BrandPartnersRoute: typeof BrandPartnersRoute
   ContactRoute: typeof ContactRoute
+  HpBrandShowcaseRoute: typeof HpBrandShowcaseRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
 }
@@ -116,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hp-brand-showcase': {
+      id: '/hp-brand-showcase'
+      path: '/hp-brand-showcase'
+      fullPath: '/hp-brand-showcase'
+      preLoaderRoute: typeof HpBrandShowcaseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -154,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BrandPartnersRoute: BrandPartnersRoute,
   ContactRoute: ContactRoute,
+  HpBrandShowcaseRoute: HpBrandShowcaseRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
 }
