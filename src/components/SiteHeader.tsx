@@ -9,6 +9,7 @@ const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About Us" },
   { to: "/brand-partners", label: "Brand Partners" },
+  { to: "/hp-brand-showcase", label: "HP Showcase" },
   { to: "/contact", label: "Contact Us" },
 ] as const;
 
