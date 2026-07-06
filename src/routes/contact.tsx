@@ -45,7 +45,7 @@ function ContactPage() {
     return () => window.removeEventListener("hashchange", handleHashScroll);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const data = {
@@ -61,13 +61,39 @@ function ContactPage() {
       toast.error(result.error.issues[0]?.message ?? "Please check the form");
       return;
     }
+    
     setSubmitting(true);
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const text = await response.text();
+      let resultData;
+      try {
+        resultData = JSON.parse(text);
+      } catch (e) {
+        console.error("Non-JSON response received:", text.substring(0, 200));
+        throw new Error('Server did not return a valid API response. The API endpoint might be missing or misconfigured.');
+      }
+
+      if (!response.ok || !resultData.success) {
+        throw new Error(resultData.message || 'Failed to submit enquiry');
+      }
+
       setSubmitting(false);
       setSubmitted(true);
       (e.target as HTMLFormElement).reset();
-      toast.success("Thank you! Our team will get back to you shortly.");
-    }, 600);
+      toast.success("Thank you! Your enquiry has been submitted successfully.");
+    } catch (error: any) {
+      setSubmitting(false);
+      toast.error(error.message || "Failed to send enquiry. Please try again later.");
+    }
   };
 
   return (
