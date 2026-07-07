@@ -18,11 +18,31 @@ export default async function handler(req, res) {
       hasSpreadsheetId: !!process.env.SPREADSHEET_ID
     });
 
+    const pk = process.env.GOOGLE_PRIVATE_KEY || '';
+    
+    console.log("--- KEY DEBUG INFO ---");
+    console.log("Starts with header:", pk.trim().startsWith('-----BEGIN PRIVATE KEY-----') || pk.trim().startsWith('"-----BEGIN PRIVATE KEY-----'));
+    console.log("Ends with footer:", pk.trim().endsWith('-----END PRIVATE KEY-----') || pk.trim().endsWith('-----END PRIVATE KEY-----"'));
+    console.log("Total length:", pk.length);
+    console.log("Contains literal '\\n':", pk.includes('\\n'));
+    console.log("Contains actual newline:", pk.includes('\n'));
+    console.log("Starts/ends with quotes:", pk.startsWith('"') && pk.endsWith('"'));
+    console.log("----------------------");
+
+    let formattedKey = pk;
+    if (formattedKey.startsWith('"') && formattedKey.endsWith('"')) {
+      formattedKey = formattedKey.slice(1, -1);
+    }
+    // Dynamically apply replace() ONLY if literal \n characters exist
+    if (formattedKey.includes('\\n')) {
+      formattedKey = formattedKey.replace(/\\n/g, '\n');
+    }
+
     console.log("Connecting to Google");
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
-        private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+        private_key: formattedKey,
       },
       scopes: [
         'https://www.googleapis.com/auth/spreadsheets',
