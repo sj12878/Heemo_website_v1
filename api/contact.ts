@@ -1,6 +1,7 @@
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { google } from 'googleapis';
 
-export default async function handler(req, res) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   console.log("API reached");
   console.log("Request received:", req.body);
   
@@ -68,8 +69,9 @@ export default async function handler(req, res) {
     console.log("Append successful. Response status:", response.status);
     console.log("Returning response");
     return res.status(200).json({ success: true, data: response.data });
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Google Sheets API error:', error);
-    return res.status(500).json({ success: false, message: error.message || 'Internal Server Error', error: String(error) });
+    const message = error instanceof Error ? error.message : String(error);
+    return res.status(500).json({ success: false, message: message || 'Internal Server Error', error: String(error) });
   }
 }
